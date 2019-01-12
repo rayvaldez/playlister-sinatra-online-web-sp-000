@@ -22,6 +22,8 @@ class SongsController < ApplicationController
     @song.genre_ids = params[:genres]
 
     if @song.save
+      redirect :"songs/#{@song.slug}"
+    else
       erb :"songs/show", locals: {message: "Successfully created song."}
     end
   end
