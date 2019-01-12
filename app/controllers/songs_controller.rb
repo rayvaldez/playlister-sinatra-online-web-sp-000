@@ -22,7 +22,7 @@ class SongsController < ApplicationController
     @song.genre_ids = params[:genres]
     @song.save
 
-    redirect :"songs/#{@song.slug}"
+    erb :"songs/#{@song.slug}"
     #erb :"songs/show", locals: {message: "Successfully created song."}
   end
 
