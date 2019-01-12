@@ -21,7 +21,7 @@ class SongsController < ApplicationController
     @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
     @song.genre_ids = params[:genres]
     @song.save
-
+binding.pry
     erb :"songs/#{@song.slug}"
     #erb :"songs/show", locals: {message: "Successfully created song."}
   end
