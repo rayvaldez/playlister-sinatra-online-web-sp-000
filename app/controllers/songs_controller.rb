@@ -20,12 +20,10 @@ class SongsController < ApplicationController
     @song = Song.create(:name => params["Name"])
     @song.artist = Artist.find_or_create_by(:name => params["Artist Name"])
     @song.genre_ids = params[:genres]
+    @song.save
 
-    if @song.save
-      redirect :"songs/#{@song.slug}", locals: {message: "Successfully created song."}
-    else
-      erb :"songs/show", locals: {message: "Successfully created song."}
-    end
+    erb :"songs/show", locals: {message: "Successfully created song."}
+
   end
 
   get '/songs/:slug/edit' do
