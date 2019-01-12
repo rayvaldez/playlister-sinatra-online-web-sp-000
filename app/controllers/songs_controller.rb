@@ -23,7 +23,7 @@ class SongsController < ApplicationController
     @song.save
 
     redirect :"songs/#{@song.slug}"
-    #erb :"songs/show", locals: {message: "Successfully created song."}
+    locals: {message: "Successfully created song."}
   end
 
   get '/songs/:slug/edit' do
