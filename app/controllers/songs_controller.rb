@@ -22,8 +22,7 @@ class SongsController < ApplicationController
     @song.genre_ids = params[:genres]
     @song.save
 
-    redirect :"songs/#{@song.slug}"
-    ,locals: {message: "Successfully created song."}
+    redirect :"songs/#{@song.slug}" ,locals: {message: "Successfully created song."}
   end
 
   get '/songs/:slug/edit' do
