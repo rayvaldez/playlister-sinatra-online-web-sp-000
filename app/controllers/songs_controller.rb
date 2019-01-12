@@ -23,7 +23,6 @@ class SongsController < ApplicationController
     @song.save
 
     erb :"songs/show", locals: {message: "Successfully created song."}
-
   end
 
   get '/songs/:slug/edit' do
